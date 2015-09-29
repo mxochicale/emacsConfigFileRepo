@@ -1,7 +1,29 @@
+;; M. Perez-Xochicale
+;; #dot emacs file
+
+;; Update emacs file on github
+;; $ cd ~/mxochicale/github/emacs_config_file
+;; $ cp /home/map479/.emacs .
+;; $ git add .
+;; $ git status 
+;; $ git commit -m "updating emacs config file"
+;; $ git push origin master
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Change log: 
+;;
+;;
+;; 29th of September 2015
+;; add multi-term app 
+;; backups directory
+;;
+;;
 ;; Last modification
 ;; 22th June 2015
 ;; Miguel P. Xochicale
-;; 
+
+
+ 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; File name: ` ~/.emacs '
@@ -188,28 +210,28 @@
 ;;      (cons '("\\.m$" . octave-mode) auto-mode-alist))
 
 
+
+
 ;; ============
 ;; Multi-Term configuration
 ;; =============
 
 ;;;; Install and Load multi-term.el:
-;; Put http://www.emacswiki.org/emacs/download/multi-term.el
-;; in your load-path, then add
-;; (require 'multi-term) in ~/.emacs.
+;;
+;; $ cd .emacs.d/
+;; $ wget http://www.emacswiki.org/emacs/download/multi-term.el
+;; 
+;; Put http://www.emacswiki.org/emacs/download/multi-term.el  in your load-path, then add
+;; (require 'multi-term) in ~/.emacs
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (custom-set-variables
-;;     '(term-default-bg-color "#000000")        ;; background color (black)
-;;      '(term-default-fg-color "#dddd00"))       ;; foreground color (yellow)
-;;  (add-to-list 'load-path "~/.emacs.d/")
-;;  (require 'multi-term)
-;;  (setq multi-term-program "/bin/bash")
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/")
+(require 'multi-term)
+(setq multi-term-program "/bin/bash")
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;                DEFAULT DIRECTORY
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;(setq default-directory "/home/mapx/" )
+(setq default-directory "/home/map479/mxochicale" )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                 ;;
@@ -222,11 +244,15 @@
 ;|---------|
 ;|         |
 ;|---------|
-;;(split-window-vertically -4)
-;;(other-window 1)
-;;(multi-term)
-;;(other-window 1)
-;;(dired "/home/mapx/b612")
+(split-window-vertically -4)
+(other-window 1)
+(multi-term)
+(other-window 1)
+(dired "/home/map479/mxochicale")
+
+;; to learn dired, use the following cheat sheets
+;; https://github.com/jasonm23/emacs-cheat-sheets
+
 
 
 
@@ -241,13 +267,7 @@
    (flet ((process-list ())) ad-do-it))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
-
-
-
-
 	   
-
 
 ;; ==================
 ;; openfiles with evince
@@ -257,3 +277,16 @@
 ;;(require 'openwith)
 ;;(setq openwith-associations '(("\\.pdf\\'" "evince" (file))))
 ;;(openwith-mode t)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; create a directory where all the backups files are stored
+;;http://superuser.com/questions/84164/how-do-i-stop-emacs-from-creating-backup-files
+(setq backup-directory-alist '((".*" . "~/mxochicale/.backups")))
+
+
+
+
+
+
