@@ -9,8 +9,18 @@
 ;; $ git commit -m "updating emacs config file"
 ;; $ git push origin master
 
+
+;;TODO: add markdown mode to highlight sections on README's .md files
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Change log: 
+;;
+;;
+;; 30th of September 2015 
+;; comment C-c c
+;; uncomment C-c u
+;; insert todays timestamp was binded C-x M-d
 ;;
 ;;
 ;; 29th of September 2015
@@ -52,8 +62,6 @@
 
 
 
-
-
 ;; =======================================================
 ;; HOWTO Disable that annoying Emacs Splashscreen
 ;; =======================================================
@@ -77,6 +85,9 @@
 ;; COLOR THEME
 ;; ===============
 ;;;;;;;;;;;;;;
+;;
+;; INSTALLATION
+;;
 ;; cd ~/.emacs.d
 ;; wget http://download.savannah.gnu.org/releases/color-theme/color-theme-6.6.0.tar.gz
 ;; tar -zxvf color-theme-6.6.0.tar.gz 
@@ -100,8 +111,8 @@
 ;;
 (setq default-frame-alist
   (append'(    
-(width        . 100)
-(height            . 40)
+(width        . 117)
+(height            . 50)
 (background-color  . "black")
 (foreground-color  . "white")
 (mouse-color       . "blue")
@@ -115,6 +126,7 @@
 
 
 
+
 ;; ============
 ;; Q: How do I change the colors of my text ?
 ;; ============
@@ -123,6 +135,22 @@
 
 
 
+;; ===============
+;; Insert Todays Date
+;; ===============
+;;;;;;;;;;;;;;
+;;http://emacswiki.org/emacs/InsertingTodaysDate
+
+(defun insert-current-date () (interactive)
+;;	(insert (shell-command-to-string "echo -n $(date +%Y-%m-%d)")))
+	(insert "# Miguel Perez-Xochicale \n# ")
+	(insert (shell-command-to-string "echo -n $(date)")) 
+	(insert "\n")
+)
+
+
+;; You can run this command with 'M-x insert-current-date' or bind this command to 'C-x M-d'
+(global-set-key "\C-x\M-d" `insert-current-date)
 
 
 
@@ -137,6 +165,8 @@
       display-time-24hr-format t)
 ;;(setq display-time-format "%I:%M:%S")
 (display-time)
+
+
 
 
 
@@ -168,8 +198,8 @@
 ;;(global-set-key "C-z" 'undo)
 ;;(global-set-key "C-v" 'yank)
 
-;;(global-set-key (kbd "C-c c") 'comment-region)   ;; make C-c C-c and C-c C-u work
-;;(global-set-key (kbd "C-c u") 'uncomment-region) ;; for comment/uncomment region in all modes
+(global-set-key (kbd "C-c c") 'comment-region)   ;; make C-c C-c and C-c C-u work
+(global-set-key (kbd "C-c u") 'uncomment-region) ;; for comment/uncomment region in all modes
 ;;(global-set-key (kbd "M-&lt;up&gt;") 'move-line-up)
 ;;(global-set-key (kbd "M-&lt;down&gt;") 'move-l
 
@@ -184,8 +214,8 @@
 
 ;; sudo apt-get install ttf-inconsolata
 ;; Then put in your ~/.emacs file something like
-;; (set-default-font "Inconsolata-12")
-;;(set-default-font "Inconsolata-15")
+;;(set-default-font "Inconsolata-12")
+(set-default-font "Inconsolata-15")
 
 
 
@@ -231,7 +261,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;                DEFAULT DIRECTORY
-(setq default-directory "/home/map479/mxochicale" )
+(setq default-directory "/home/map479/mxochicale/phd" )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                 ;;
@@ -248,10 +278,31 @@
 (other-window 1)
 (multi-term)
 (other-window 1)
-(dired "/home/map479/mxochicale")
+(dired "/home/map479/mxochicale/phd")
 
 ;; to learn dired, use the following cheat sheets
 ;; https://github.com/jasonm23/emacs-cheat-sheets
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                 ;;
+;;             swith between windows/buffers               ;;
+;;                                                 ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; I tried to  use ace-windows, but there is a minnor setback 
+; Sysmbol's funciton definition is void: ace-window.
+; C-x o makes the work of switching the windows successfully
+; Wed Sep 30 10:55:47 BST 2015
+
+;$ cd .emacs.d/
+;$ wget https://github.com/abo-abo/ace-window/blob/master/ace-window.el
+;http://emacs.stackexchange.com/questions/3458/how-to-switch-between-windows-quickly
+;(global-set-key (kbd "C-x o") 'ace-window)
+;(global-set-key (kbd "M-p") 'ace-window)
 
 
 
@@ -268,6 +319,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 	   
+
 
 ;; ==================
 ;; openfiles with evince
@@ -288,5 +340,32 @@
 
 
 
+
+;; ==================
+;; automatically checking your spelling
+;;==================
+;; http://emacs-fu.blogspot.co.uk/2009/12/automatically-checking-your-spelling.html
+
+
+(setq ispell-program-name "aspell"
+  ispell-extra-args '("--sug-mode=ultra"))
+
+
+;; M-x flyspell-mode enables Flyspell mode, which highlights all misspelled words.
+
+;; to activate flyspell-mode on org-mode buffers
+(add-hook 'org-mode-hook
+  (lambda()
+    (flyspell-mode 1)))
+
+
+
+;; http://orgmode.org/worg/org-tutorials/org4beginners.html
+;; MY PROJECT -*- mode: org -*-
+;; This will enable org-mode for this document, no matter what the file-ending is. 
+
+
+
+		
 
 
