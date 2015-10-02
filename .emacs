@@ -4,6 +4,7 @@
 ;; Update emacs file on github
 ;; $ cd ~/mxochicale/github/emacs_config_file
 ;; $ cp /home/map479/.emacs .
+;; $ cp /home/map479/emacs_dependencies.sh .
 ;; $ git add .
 ;; $ git status 
 ;; $ git commit -m "updating emacs config file"
@@ -97,7 +98,7 @@
 
 
 ;; edit load-path values
-(add-to-list 'load-path "/home/map479/.emacs.d/color-theme-6.6.0")
+(add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0")
 (require 'color-theme)
 (eval-after-load "color-theme"
   '(progn
@@ -111,7 +112,7 @@
 ;;
 (setq default-frame-alist
   (append'(    
-(width        . 117)
+(width        . 105)
 (height            . 50)
 (background-color  . "black")
 (foreground-color  . "white")
@@ -210,10 +211,19 @@
 ;; FONT
 ;; ===============
 ;;;;;;;;;;;;;;
-;; http://stackoverflow.com/questions/3958343/how-can-i-set-a-default-font-inconsolata-in-my-emacs-el-in-ubuntu
+
+;; download inconsolata font and install it
+;; wget http://www.levien.com/type/myfonts/Inconsolata.otf
+;; reference
+;; http://www.levien.com/type/myfonts/inconsolata.html
+
+;; or
 
 ;; sudo apt-get install ttf-inconsolata
 ;; Then put in your ~/.emacs file something like
+;; http://stackoverflow.com/questions/3958343/how-can-i-set-a-default-font-inconsolata-in-my-emacs-el-in-ubuntu
+
+
 ;;(set-default-font "Inconsolata-12")
 (set-default-font "Inconsolata-15")
 
@@ -261,7 +271,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;                DEFAULT DIRECTORY
-(setq default-directory "/home/map479/mxochicale/phd" )
+(setq default-directory "~/mxochicale/phd" )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                 ;;
@@ -278,12 +288,10 @@
 (other-window 1)
 (multi-term)
 (other-window 1)
-(dired "/home/map479/mxochicale/phd")
+(dired "~/mxochicale/phd")
 
 ;; to learn dired, use the following cheat sheets
 ;; https://github.com/jasonm23/emacs-cheat-sheets
-
-
 
 
 
