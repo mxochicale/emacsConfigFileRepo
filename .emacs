@@ -144,6 +144,7 @@
 
 (defun insert-current-date () (interactive)
 ;;	(insert (shell-command-to-string "echo -n $(date +%Y-%m-%d)")))
+	(insert "-*- mode: org -*- \n")
 	(insert "# Miguel Perez-Xochicale \n# ")
 	(insert (shell-command-to-string "echo -n $(date)")) 
 	(insert "\n")
@@ -225,7 +226,7 @@
 
 
 ;;(set-default-font "Inconsolata-12")
-(set-default-font "Inconsolata-15")
+(set-default-font "Inconsolata-13")
 
 
 
