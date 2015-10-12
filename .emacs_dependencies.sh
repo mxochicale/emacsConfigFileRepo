@@ -13,8 +13,8 @@ echo
 
 
 # how to run
-# chmod +x emacs_dependencies.sh
-# ./emacs_dependencies.sh
+# chmod +x .emacs_dependencies.sh
+# ./.emacs_dependencies.sh
 
 
 mkdir .emacs.d
