@@ -30,7 +30,9 @@ $ git push origin master
 ```
 
 
+
 ## How to use it
+
 
 ```
 git clone https://github.com/mxochicale/emacs_config_file.git
@@ -41,6 +43,12 @@ cp ~/mxochicale/github/emacs_config_file/.emacs_dependencies.sh .
 
 ```
 
-%%open and install inconsolata.otf
+
+## How to install otf font on Ubuntu 14.01.03
+
+```
+chmod 644 Inconsolata.otf 
+sudo cp /home/map479-admin/.emacs.d/Inconsolata.otf .
+```
 
 enjoy :)
