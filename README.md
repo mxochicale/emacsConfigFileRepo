@@ -44,11 +44,17 @@ cp ~/mxochicale/github/emacs_config_file/.emacs_dependencies.sh .
 ```
 
 
-## How to install otf font on Ubuntu 14.01.03
+## How to install otf font on Ubuntu 14.01.03 [ref1]
 
 ```
 chmod 644 Inconsolata.otf 
 sudo cp /home/map479-admin/.emacs.d/Inconsolata.otf .
 ```
+
+## References
+
+[REF1] http://xmodulo.com/how-to-install-custom-fonts-in-linux-desktop.html "ref1"
+
+
 
 enjoy :)
