@@ -11,7 +11,9 @@
 ;; $ git push origin master
 
 
-;;TODO: add markdown mode to highlight sections on README's .md files
+;;TODO: 
+;; investigate the proper use of (put 'upcase-region 'disabled nil)
+;; add markdown mode to highlight sections on README's .md files
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -375,6 +377,24 @@
 
 
 
-		
+
+;Modifications
+;# Miguel Perez-Xochicale 
+;# Mon Oct 19 10:12:41 BST 2015
+
+;;
+;; http://stackoverflow.com/questions/64360/how-to-copy-text-from-emacs-to-another-application-on-linux	
+;; enable clipboard in emacs
+(setq x-select-enable-clipboard t)
 
 
+;; "CTRL+SPACE" has been bound to invoke some input method and does not work on Emacs
+
+;; After upgrade to ubuntu 14.04.3, I had the same problem. What I did.
+;; In Ibus preferences: System > Preferences > Keyboard Input Methods.
+;; There is an option: Next input method it was set to ctrl+space, 
+;; I removed that and then all started to work back again.
+
+;;http://askubuntu.com/questions/243639/ctrlspace-has-been-bound-to-invoke-some-input-method-and-does-not-work-in-ema
+
+;; (put 'upcase-region 'disabled nil)
