@@ -22,7 +22,7 @@ Tue 23 Jun 2015 11:53:36 BST
 
 ```
 $cd ~/mxochicale/github/emacs_config_file
-$cp /home/map479/.emacs .
+$cp /home/map478/.emacs .
 $ git add .
 $ git status
 $ git commit -m "updating emacs config file"
