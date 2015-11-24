@@ -21,8 +21,9 @@ Tue 23 Jun 2015 11:53:36 BST
 ##How to update from desktop
 
 ```
-$cd ~/mxochicale/github/emacs_config_file
-$cp /home/map478/.emacs .
+$ cd ~/mxochicale/github/emacs_config_file
+$ cp /home/map479-admin/.emacs .
+$ cp /home/map479-admin/.emacs_dependencies.sh .
 $ git add .
 $ git status
 $ git commit -m "updating emacs config file"

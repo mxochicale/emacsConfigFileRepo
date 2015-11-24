@@ -19,13 +19,26 @@ echo
 
 mkdir .emacs.d
 cd ~/.emacs.d
-wget http://download.savannah.gnu.org/releases/color-theme/color-theme-6.6.0.tar.gz
+
+#to open files e.g. pdf files with evince
+wget https://raw.githubusercontent.com/emacsmirror/openwith/master/openwith.el
+
 wget http://www.emacswiki.org/emacs/download/multi-term.el
+
+wget http://www.levien.com/type/myfonts/Inconsolata.otf
+
+
+
+## color theme (donwload, untar and deleted)
+wget http://download.savannah.gnu.org/releases/color-theme/color-theme-6.6.0.tar.gz
 tar -zxvf color-theme-6.6.0.tar.gz 
 rm color-theme-6.6.0.tar.gz
-wget http://www.levien.com/type/myfonts/Inconsolata.otf
+
 cd color-theme-6.6.0/themes
+
+#to use as  color theme in emacs
 wget https://raw.githubusercontent.com/juba/color-theme-tangotango/master/color-theme-tangotango.el
+
 
 
 

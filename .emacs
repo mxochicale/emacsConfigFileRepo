@@ -1,15 +1,6 @@
 ;; M. Perez-Xochicale
 ;; #dot emacs file
 
-;; Update emacs file on github
-;; $ cd ~/mxochicale/github/emacs_config_file
-;; $ cp /home/map479/.emacs .
-;; $ cp /home/map479/emacs_dependencies.sh .
-;; $ git add .
-;; $ git status 
-;; $ git commit -m "updating emacs config file"
-;; $ git push origin master
-
 
 ;;TODO: 
 ;; investigate the proper use of (put 'upcase-region 'disabled nil)
@@ -18,6 +9,12 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Change log: 
+;;
+;;
+;; # Tue Nov 24 11:55:03 GMT 2015
+;; adding Ctr-TAB to change buffer windows
+;; update the .emacs_dependencies.sh
+;;
 ;;
 ;;
 ;; 30th of September 2015 
@@ -34,6 +31,8 @@
 ;; Last modification
 ;; 22th June 2015
 ;; Miguel P. Xochicale
+
+
 
 
  
