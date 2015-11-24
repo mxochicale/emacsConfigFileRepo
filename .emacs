@@ -84,6 +84,10 @@
 
 
 
+
+
+
+
 ;; ===============
 ;; COLOR THEME
 ;; ===============
@@ -96,8 +100,6 @@
 ;; tar -zxvf color-theme-6.6.0.tar.gz 
 ;; cd color-theme-6.6.0/themes
 ;; wget https://raw.githubusercontent.com/juba/color-theme-tangotango/master/color-theme-tangotango.el
-
-
 
 ;; edit load-path values
 (add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0")
@@ -114,8 +116,8 @@
 ;;
 (setq default-frame-alist
   (append'(    
-(width        . 105)
-(height            . 50)
+(width        . 94)
+(height            . 75)
 (background-color  . "black")
 (foreground-color  . "white")
 (mouse-color       . "blue")
@@ -130,10 +132,15 @@
 
 
 
+
+
 ;; ============
 ;; Q: How do I change the colors of my text ?
 ;; ============
 (set-face-foreground 'font-lock-comment-face "green1" )
+
+
+
 
 
 
@@ -160,6 +167,10 @@
 
 
 
+
+
+
+
 ;; ===============
 ;; Display date and time
 ;; ===============
@@ -169,6 +180,11 @@
       display-time-24hr-format t)
 ;;(setq display-time-format "%I:%M:%S")
 (display-time)
+
+
+
+
+
 
 
 
@@ -187,11 +203,28 @@
 
 
 
+
+
+
+
+
+
 ;; ============
 ;; Keyboard
 ;; ============
 ;;
-;;(global-set-key [C-tab]     'yic-next-buffer)
+
+
+;;(global-set-key [C-tab] 'next-buffer)
+
+
+(global-set-key [C-tab] 
+    (lambda ()
+      (interactive)
+      (other-window -1)))
+;; http://stackoverflow.com/questions/2341711/emacs-switch-window-to-c-tab-and-c-s-tab
+
+
 ;;(global-set-key [(shift tab)]  'yic-prev-buffer)
 ;;(global-set-key [home] 'beginning-of-line)
 ;;(global-set-key [end] 'end-of-line)
@@ -207,6 +240,8 @@
 ;;(global-set-key (kbd "M-&lt;up&gt;") 'move-line-up)
 ;;(global-set-key (kbd "M-&lt;down&gt;") 'move-l
 
+
+;; main reference: http://dotemacs.de/dotfiles/BenjaminRutt.emacs.html
 
 
 
@@ -233,10 +268,18 @@
 
 
 
+
+
 ;; ============
 ;; Highlight matching parenthesis
 ;; ============
 (show-paren-mode 1)
+
+
+
+
+
+
 
 
 
@@ -251,6 +294,10 @@
 ;;(autoload 'octave-mode "octave-mod" nil t)
 ;;(setq auto-mode-alist
 ;;      (cons '("\\.m$" . octave-mode) auto-mode-alist))
+
+
+
+
 
 
 
@@ -271,6 +318,7 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (require 'multi-term)
 (setq multi-term-program "/bin/bash")
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;                DEFAULT DIRECTORY
@@ -295,6 +343,21 @@
 
 ;; to learn dired, use the following cheat sheets
 ;; https://github.com/jasonm23/emacs-cheat-sheets
+
+
+
+
+;; ==================
+;; openfiles with evince
+;; ==================
+
+(add-to-list 'load-path "~/.emacs.d/openwith.el")
+(require 'openwith)
+(setq openwith-associations '(("\\.pdf\\'" "evince" (file))))
+(openwith-mode t)
+
+
+
 
 
 
@@ -332,17 +395,6 @@
 	   
 
 
-;; ==================
-;; openfiles with evince
-;; ==================
-
-;;(add-to-list 'load-path "~/openwith.el")
-;;(require 'openwith)
-;;(setq openwith-associations '(("\\.pdf\\'" "evince" (file))))
-;;(openwith-mode t)
-
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; create a directory where all the backups files are stored
 ;;http://superuser.com/questions/84164/how-do-i-stop-emacs-from-creating-backup-files
@@ -366,8 +418,14 @@
 
 ;; to activate flyspell-mode on org-mode buffers
 (add-hook 'org-mode-hook
-  (lambda()
-    (flyspell-mode 1)))
+    (lambda()
+      (flyspell-mode 1)
+      (auto-fill-mode 1)
+    )
+)
+
+;; http://stackoverflow.com/questions/3672033/turning-on-auto-fill-mode-as-a-minor-mode-when-i-run-emacs
+
 
 
 
@@ -398,3 +456,18 @@
 ;;http://askubuntu.com/questions/243639/ctrlspace-has-been-bound-to-invoke-some-input-method-and-does-not-work-in-ema
 
 ;; (put 'upcase-region 'disabled nil)
+
+
+
+;; justify latex code in emacs
+;; http://stackoverflow.com/questions/1582085/how-do-i-fully-justify-latex-code-on-emacs
+;;(add-hook 'TeX-mode-hook 'turn-on-auto-fill)
+
+
+;alt-q
+(setq-default fill-column 80)
+
+
+
+
+

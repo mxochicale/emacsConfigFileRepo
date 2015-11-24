@@ -47,8 +47,9 @@ cp ~/mxochicale/github/emacs_config_file/.emacs_dependencies.sh .
 ## How to install otf font on Ubuntu 14.01.03 [ref1]
 
 ```
+cd .emacs.d
 chmod 644 Inconsolata.otf 
-sudo cp /home/map479-admin/.emacs.d/Inconsolata.otf .
+sudo cp /home/map479-admin/.emacs.d/Inconsolata.otf /usr/share/fonts/opentype
 ```
 
 ## References
