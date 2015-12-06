@@ -15,7 +15,10 @@
 ;; adding Ctr-TAB to change buffer windows
 ;; update the .emacs_dependencies.sh
 ;;
-;;
+;;-*- mode: org -*- 
+;; # Miguel Perez-Xochicale 
+;; # Sun Dec 6 18:01:04 GMT 2015
+;; emacs for raspberry pi
 ;;
 ;; 30th of September 2015 
 ;; comment C-c c
@@ -116,7 +119,7 @@
 (setq default-frame-alist
   (append'(    
 (width        . 94)
-(height            . 75)
+(height            . 55)
 (background-color  . "black")
 (foreground-color  . "white")
 (mouse-color       . "blue")
@@ -262,9 +265,7 @@
 
 
 ;;(set-default-font "Inconsolata-12")
-(set-default-font "Inconsolata-13")
-
-
+(set-default-font "Inconsolata-14")
 
 
 
@@ -321,7 +322,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;                DEFAULT DIRECTORY
-(setq default-directory "~/mxochicale/phd" )
+(setq default-directory "~/" )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                 ;;
@@ -338,7 +339,7 @@
 (other-window 1)
 (multi-term)
 (other-window 1)
-(dired "~/mxochicale/phd")
+(dired "~/")
 
 ;; to learn dired, use the following cheat sheets
 ;; https://github.com/jasonm23/emacs-cheat-sheets
@@ -397,7 +398,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; create a directory where all the backups files are stored
 ;;http://superuser.com/questions/84164/how-do-i-stop-emacs-from-creating-backup-files
-(setq backup-directory-alist '((".*" . "~/mxochicale/.backups")))
+(setq backup-directory-alist '((".*" . "~/.backups")))
 
 
 
