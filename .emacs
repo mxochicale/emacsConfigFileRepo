@@ -3,6 +3,8 @@
 
 
 ;;TODO: 
+;; organise emacs file and delete unnecessary comments
+;;
 ;; investigate the proper use of (put 'upcase-region 'disabled nil)
 ;; add markdown mode to highlight sections on README's .md files
 
@@ -10,27 +12,32 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Change log: 
 ;;
+
+;; Sat 26 Dec 12:23:21 UTC 2015
+;; paths for packages are added:
+;; (add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0")
+;; (add-to-list 'load-path "~/.emacs.d/multi-term")
+;; (add-to-list 'load-path "~/.emacs.d/openwith")
 ;;
+;; and the working directory is mxochicale: (dired "~/mxochicale")
+
+;
 ;; # Tue Nov 24 11:55:03 GMT 2015
 ;; adding Ctr-TAB to change buffer windows
 ;; update the .emacs_dependencies.sh
-;;
-;;-*- mode: org -*- 
-;; # Miguel Perez-Xochicale 
+
 ;; # Sun Dec 6 18:01:04 GMT 2015
 ;; emacs for raspberry pi
-;;
+
 ;; 30th of September 2015 
 ;; comment C-c c
 ;; uncomment C-c u
 ;; insert todays timestamp was binded C-x M-d
-;;
-;;
+
 ;; 29th of September 2015
 ;; add multi-term app 
 ;; backups directory
-;;
-;;
+
 ;; Last modification
 ;; 22th June 2015
 ;; Miguel P. Xochicale
@@ -170,9 +177,6 @@
 
 
 
-
-
-
 ;; ===============
 ;; Display date and time
 ;; ===============
@@ -264,10 +268,7 @@
 ;; http://stackoverflow.com/questions/3958343/how-can-i-set-a-default-font-inconsolata-in-my-emacs-el-in-ubuntu
 
 
-;;(set-default-font "Inconsolata-12")
-(set-default-font "Inconsolata-14")
-
-
+(set-default-font "Inconsolata-13")
 
 
 ;; ============
@@ -314,8 +315,10 @@
 ;; Put http://www.emacswiki.org/emacs/download/multi-term.el  in your load-path, then add
 ;; (require 'multi-term) in ~/.emacs
 
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/multi-term")
 (require 'multi-term)
 (setq multi-term-program "/bin/bash")
 
@@ -339,7 +342,7 @@
 (other-window 1)
 (multi-term)
 (other-window 1)
-(dired "~/")
+(dired "~/mxochicale")
 
 ;; to learn dired, use the following cheat sheets
 ;; https://github.com/jasonm23/emacs-cheat-sheets
@@ -351,7 +354,7 @@
 ;; openfiles with evince
 ;; ==================
 
-(add-to-list 'load-path "~/.emacs.d/openwith.el")
+(add-to-list 'load-path "~/.emacs.d/openwith")
 (require 'openwith)
 (setq openwith-associations '(("\\.pdf\\'" "evince" (file))))
 (openwith-mode t)

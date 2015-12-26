@@ -1,27 +1,19 @@
-emacs_config_file Repository
+emacs configuration files
 =======
 
-.emacs file contains some tools that I need while using emacs
-Miguel Perez-Xochicale 
-
-# TODO
-
-* Sun Dec 6 18:14:32 GMT 2015
-create a main path variable so as to use in different computers
+Repository for 
+```
+.emacs		
+.emacs_dependencies.sh
+```
 
 
-# CHANGES
-* Sun Dec 6 18:08:20 GMT 2015
-modification to use emacs file on a rasberry pi board
-Use of  ~/ as the main path
+## TODO LIST and CHANGE LOGS
 
-* Mon Oct 12 09:19:51 BST 2015
-rename emacs_dependencies.sh to .emacs_dependencies.sh
-edit README to make it more readable
+The TODO list and change logs are attached at the beginning of each file
 
 
-* Tue Sep 29 12:37:23 BST 2015
-* Tue 23 Jun 2015 11:53:36 BST 
+# GitHub Update
 
 ##How to update from desktop
 
@@ -36,7 +28,6 @@ $ git push origin master
 ```
 
 
-
 ## How to use it
 
 ```
@@ -45,26 +36,30 @@ cd
 cp ~/mxochicale/github/emacs_config_file/.emacs .
 cp ~/mxochicale/github/emacs_config_file/.emacs_dependencies.sh .
 ./.emacs_dependencies.sh 
-
 ```
 
 
 ## Use in a raspberry pi board
 
-** todo
-   -- modify the main user directory to make a standard main path
-
+update from the pi
 ```
+pi@raspberrypi:~/mxochicale/github/emacs_config_file $ cp /home/pi/.emacs .
+pi@raspberrypi:~/mxochicale/github/emacs_config_file $ cp /home/pi/.emacs_dependencies.sh .
+$ git add .
+$ git status
+$ git commit -m "updating emacs config file"
+$ git push origin master
+```
+
+from github to pi
+```
+$ cd ~/mxochicale/github 
 $ git clone https://github.com/mxochicale/emacs_config_file.git
 $ cd emacs_config_file/
-$ pwd --->  /home/pi/robit_machine/emacs_config_file/
-$cd
-$cp /home/pi/robit_machine/emacs_config_file/.emacs_dependencies.sh .
-$./.emacs_dependencies.sh 
-$cp /home/pi/robit_machine/emacs_config_file/.emacs .
-
+$ cd
+$ cp ~/mxochicale/github/emacs_config_file/.emacs_dependencies.sh .
+$ ./.emacs_dependencies.sh
+$ cp ~/mxochicale/github/emacs_config_file/.emacs .
 ```
 
-enjoy :-)
-
-
+## time to enjoy :-)
